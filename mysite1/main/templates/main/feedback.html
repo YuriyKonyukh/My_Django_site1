@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title%}
+Feedback
+{% endblock %}
+
+{% block content %}
+    <style type="text/css">
+    BODY {
+    background: url("https://i.ibb.co/nL1K1RN/thank-you-gaf485dfe2-1920.jpg") no-repeat;
+    background-size: 100%
+    }
+    </style>
+    <h5>Leave your comment in form below</h5>
+    <form method="post" style = "max-width: 380px" class="opacity-75">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+        <button type = "submit" class="btn btn-success">Send</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

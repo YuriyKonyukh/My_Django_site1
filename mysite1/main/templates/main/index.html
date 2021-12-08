@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <style type="text/css">
+   BODY {
+    background: url("https://i.ibb.co/K9Q70VX/laptop-g444b16a2d-1920.jpg") no-repeat;
+    background-size: 100%;
+   }
+    </style>
+    <h1>Python-developer</h1>
+    <h3 style = color:white class="display-6 fw-bold d-flex justify-content-center ">Welcome to my site!</h3>
+    <div style = color:white class="col text-center lead mb-4">Here you can read information about me and my skills.
+        <br> On tab Projects you can watch my Django-projects.
+        <br>And on tab Contacts you can find information to contact me!</div>
+
+
+    {% if tasks %}
+        {% for elem in tasks %}
+            <div style = "max-width: 380px" class="opacity-75 mt-7 alert alert-primary">
+                <h3>{{elem.title}}</h3>
+                <p>{{elem.task}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div style="font-size:20px" class="display-6 fw-bold">Last replies</div>
+    {% endif  %}
+{% endblock %}
